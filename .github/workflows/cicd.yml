@@ -53,9 +53,9 @@ jobs:
         name: Building & Pushing Docker Image
         run: |
           # cd containers/$TAG_NAME || exit
-          VERSION=$(cat VERSION)
-          docker build . --tag quay.io/starnight98/${NORMALIZED}_${TAG_NAME}:${VERSION}_${{ steps.date.outputs.date }}
-          docker push quay.io/starnight98/${NORMALIZED}_${TAG_NAME}:${VERSION}_${{ steps.date.outputs.date }}
+          # VERSION=$(cat VERSION)
+          docker build . --tag quay.io/starnight98/${NORMALIZED}_${TAG_NAME}:${{ steps.date.outputs.date }}
+          docker push quay.io/starnight98/${NORMALIZED}_${TAG_NAME}:${{ steps.date.outputs.date }}
       -
         name: Setting Repository Public
         run: |
