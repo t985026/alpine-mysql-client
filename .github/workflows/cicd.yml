@@ -23,6 +23,9 @@ jobs:
         with:
           fetch-depth: 0  # OR "2" -> To retrieve the preceding commit.
 
+      - name: Build the Docker image
+        run: docker build . --file Dockerfile --tag alpine-mysql-client:$(date +%s)
+
       - 
         name: Get changed files
         id: changed-files
